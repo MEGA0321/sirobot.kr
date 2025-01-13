@@ -3,339 +3,441 @@
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/GabiaHeuldot-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;}
+
+/* 기본 스타일 */
+:root {
+    --container-width-desktop: 460px;
+    --container-width-mobile: 90%;
+    --header-height: 60px;
+}
+
+body {
+    background-color: #313338;
+    color: #fff;
+    font-family: 'gg sans', 'Noto Sans', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.invite-container {
+    background-color: #2b2d31;
+    border-radius: 8px;
+    width: var(--container-width-desktop);
+    max-width: 100%;
+    height: auto;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.content-wrapper {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.popup-footer {
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.cancel-btn {
+    color: var(--text-normal);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 4px;
+}
+
+.cancel-btn:hover {
+    text-decoration: underline;
+}
+
+.continue-btn {
+    background-color: #5865f2;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.17s ease;
+}
+
+.continue-btn:hover {
+    background-color: #4752c4;
+}
+
+.bot-header {
+    padding: 20px;
+    text-align: center;
+}
+
+.bot-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    object-fit: cover;
+}
+
+.bot-name {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.permissions-container {
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 24px;
+}
+
+.permissions-title {
+    color: var(--text-normal);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.permission-item1 {
+    margin-top: 13px;
+    margin-bottom: 5px;
+    margin-left: -89px;
+    text-align: center;
+    width: 100%;
+    color: var(--text-muted);
+    font-size: 14px;
+    padding: 4px 0;
+}
+
+.permission-item2 {
+    margin-left: -105px;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    color: var(--text-muted);
+    font-size: 14px;
+    padding: 4px 0;
+}
+
+.permission-item3 {
+    margin-left: -8px;
+    width: 100%;
+    color: var(--text-muted);
+    font-size: 14px;
+    padding: 4px 0;
+}
+
+.permission-item.granted::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color: #23a55a;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+}
+
+.permission-item.denied::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color: var(--red);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M12.72 3.28a.75.75 0 0 1 0 1.06L9.06 8l3.66 3.66a.75.75 0 1 1-1.06 1.06L8 9.06l-3.66 3.66a.75.75 0 0 1-1.06-1.06L6.94 8 3.28 4.34a.75.75 0 0 1 1.06-1.06L8 6.94l3.66-3.66a.75.75 0 0 1 1.06 0z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.verified-badge {
+    background-color: #5865f2;
+    color: white;
+    padding: 0 4px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.access-text {
+    text-align: center;
+    color: #dbdee1;
+    margin-bottom: 8px;
+}
+
+.login-text {
+    text-align: center;
+    color: #b5bac1;
+    font-size:14px;
+    margin-bottom: 24px;
+}
+
+.login-link {
+    color: #00a8fc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.permissions-header {
+    color: #b5bac1;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.permissions-list {
+    background-color: #232428;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.permissions-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.permissions-header {
+    color: #b5bac1;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.server-select-wrapper {
+    padding: 15px;
+    margin-top: auto;
+}
+
+.server-select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: #1d1d1d;
+    color: #888;
+    border: none;
+    font-size: 14px;
+}
+
+.server_invite {
+    color: #b5bac1;
+    font-size: 12px;
+    margin-top: -20px;
+    margin-left: -225px;
+}
+
+.server-note {
+    color: #b5bac1;
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+.button-container {
+    background-color: #2b2d31;
+    padding: 16px;
+    border-top: 1px solid #1f2023;
+}
+
+.authorize-btn {
+    background-color: #5865f2;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 12px 24px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.authorize-btn:hover {
+    background-color: #4752c4;
+}
+
+.app-mount {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.artwork {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.discord-logo-container {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.discord-logo {
+    width: 26px;
+    height: 20px;
+}
+
+.logo-separator {
+    color: #fff;
+    font-size: 14px;
+    padding-left: 9px;
+    font-weight: 500;
+}
+
+.siro-ticket-text {
+    font-family: 'GabiaHeuldot-Regular', serif;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing:2px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
     body {
-        background-color: #313338;
-        color: #fff;
-        font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-    }
-    
-    .popup-header {
-        padding: 16px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .invite-container {
-        background-color: #2b2d31;
-        border-radius: 6px;
-        width: 460px;
-        height: 665px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .content-wrapper {
         padding: 10px;
-        flex-grow: 1;
-    }
-    .popup-footer {
-        display: flex;
-        justify-content: space-between;
-        padding: 16px;
-        background-color: var(--background-secondary);
-        border-top: 1px solid rgba(255,255,255,0.06);
     }
 
-    .cancel-btn {
-        color: var(--text-normal);
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 14px;
-        padding: 2px 4px;
+    .invite-container {
+        width: var(--container-width-mobile);
+        min-height: 500px;
     }
 
-    .cancel-btn:hover {
-        text-decoration: underline;
-    }
-
-    .continue-btn {
-        background-color: #5865f2;
-        color: white;
-        border: none;
-        padding: 10px 16px;
-        border-radius: 3px;
-        font-size: 14px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: background-color 0.17s ease;
-    }
-
-    .continue-btn:hover {
-        background-color: #4752c4;
-    }
-
-    .bot-header {
-        text-align: center;
-        margin: 32px 0;
-    }
-
-    .bot-avatar {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        margin: 0 auto;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .bot-name {
-        font-size: 21px;
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-
-    .permissions-container {
-        background-color: var(--background-secondary);
-        border-radius: 4px;
-        padding: 12px;
-        margin-bottom: 24px;
-    }
-
-    .permissions-title {
-        color: var(--text-normal);
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-    }
-
-    .permission-item1 {
-        margin-top: 13px;
-        margin-bottom: 5px;
-        margin-left: -89px;
-        text-align: center;
-        width: 100%;
-        color: var(--text-muted);
-        font-size: 14px;
-        padding: 4px 0;
-    }
-    .permission-item2 {
-        margin-left: -105px;
-        margin-top: 13px;
-        margin-bottom: 15px;
-        width: 100%;
-        color: var(--text-muted);
-        font-size: 14px;
-        padding: 4px 0;
-    }
-    .permission-item3 {
-        margin-left: -8px;
-        width: 100%;
-        color: var(--text-muted);
-        font-size: 14px;
-        padding: 4px 0;
-    }
-
-    .permission-item.granted::before {
-        content: "";
-        width: 18px;
-        height: 18px;
-        background-color: #23a55a;
-        border-radius: 50%;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z'%3E%3C/path%3E%3C/svg%3E");
-        background-size: 12px;
-        background-position: center;
-        background-repeat: no-repeat;
-        margin-right: 4px;
-    }
-
-    .permission-item.denied::before {
-        content: "";
-        width: 18px;
-        height: 18px;
-        background-color: var(--red);
-        border-radius: 50%;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M12.72 3.28a.75.75 0 0 1 0 1.06L9.06 8l3.66 3.66a.75.75 0 1 1-1.06 1.06L8 9.06l-3.66 3.66a.75.75 0 0 1-1.06-1.06L6.94 8 3.28 4.34a.75.75 0 0 1 1.06-1.06L8 6.94l3.66-3.66a.75.75 0 0 1 1.06 0z'%3E%3C/path%3E%3C/svg%3E");
-        background-size: 12px;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .verified-badge {
-        background-color: #5865f2;
-        color: white;
-        padding: 0 4px;
-        border-radius: 3px;
-        font-size: 14px;
-        font-weight: 500;
-        margin-left: 8px;
-    }
-
-    .access-text {
-        text-align: center;
-        color: #dbdee1;
-        margin-bottom: 8px;
-    }
-
-    .login-text {
-        text-align: center;
-        color: #b5bac1;
-        font-size:14px;
-        margin-bottom: 24px;
-    }
-
-    .login-link {
-        color: #00a8fc;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .permissions-header {
-        color: #b5bac1;
-        font-size: 14px;
-        margin-bottom: 8px;
-        text-align: center;
-        width: 100%;
+    .discord-logo-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        margin-bottom: 20px;
     }
 
     .permissions-list {
-        background-color: #232428;
-        border-radius: 4px;
+        max-height: 300px;
+        margin: 10px;
+    }
+
+    .bot-header {
         padding: 15px;
-        margin: 0 auto;
-        margin-bottom: 16px;
-        align-items: center;
-        width: 368px;
-        height: 332px;
-        box-sizing: border-box;
     }
 
-    .permissions-container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .popup-footer {
+        padding: 12px;
     }
 
-    .permissions-header {
-        color: #b5bac1;
+    .continue-btn, .cancel-btn {
+        padding: 10px 15px;
         font-size: 14px;
-        margin-bottom: 8px;
-        text-align: center;
+    }
+}
+
+/* 작은 모바일 화면 */
+@media (max-width: 320px) {
+    .invite-container {
         width: 100%;
     }
 
-    .server-select-wrapper {
-        margin-top: auto;
+    .bot-avatar {
+        width: 60px;
+        height: 60px;
     }
 
-    .server-select-wrapper {
-        margin-top: 24px;
+    .permissions-list {
+        padding: 10px;
+        margin: 5px;
     }
-    .appMount_fae9dd {
-        position: relative;
-        width: 100%;
-        height: 100vh;
+}
+
+/* 태블릿 화면 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .invite-container {
+        width: 600px;
+    }
+}
+
+/* 가로 모드 대응 */
+@media (max-height: 600px) and (orientation: landscape) {
+    .invite-container {
+        height: 90vh;
+        overflow-y: auto;
     }
 
-    .siroticket {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
+    .bot-header {
+        padding: 10px;
     }
 
-    .siroticket1 {
-        position: relative;
-        z-index: 1;
+    .bot-avatar {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* 접근성 개선 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* 다크 모드 대응 */
+@media (prefers-color-scheme: dark) {
+    .server-select {
+        background-color: #1a1a1a;
+    }
+}
+
+/* 고해상도 디스플레이 대응 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .bot-avatar {
+        background-size: contain;
+    }
+}
+
+/* 터치 기기 최적화 */
+@media (hover: none) {
+    .continue-btn, .cancel-btn {
+        padding: 12px 20px;  /* 더 큰 터치 영역 */
     }
 
     .server-select {
-        width: 100%;
-        padding: 12px;
-        background-color: #1d1d1d;
-        color: rgb(136, 136, 136);
-        border: none;
-        border-radius: 4px;
-        margin-bottom: 8px;
-        font-size: 16px;
+        height: 44px;  /* 더 큰 터치 영역 */
     }
-
-    .server_invite {
-        color: #b5bac1;
-        font-size: 12px;
-        margin-top: -20px;
-        margin-left: -225px;
-
-    }
-    .server-note {
-        color: #b5bac1;
-        font-size: 12px;
-        margin-bottom: 16px;
-    }
-
-    .button-container {
-        background-color: #2b2d31;
-        padding: 16px;
-        border-top: 1px solid #1f2023;
-    }
-
-    .authorize-btn {
-        background-color: #5865f2;
-        color: white;
-        border: none;
-        border-radius: 3px;
-        padding: 12px 24px;
-        width: 100%;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    .authorize-btn:hover {
-        background-color: #4752c4;
-    }
-    .app-mount {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .artwork {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-    }
-    .discord-logo-container {
-        position: absolute;
-        top: 24px;
-        left: 24px;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .discord-logo {
-        width: 26px;
-        height: 20px;
-    }
-
-    .logo-separator {
-        color: #fff;
-        font-size: 14px;
-        padding-left: 9px;
-        font-weight: 500;
-    }
-
-    .siro-ticket-text {
-        font-family: 'GabiaHeuldot-Regular', serif;
-        color: #fff;
-        font-size: 23px;
-        font-weight: 600;
-        letter-spacing:2px;
-    }
+}
