@@ -1,5 +1,5 @@
 function launchConfetti() {
-            const duration = 200;  // 폭죽 지속 시간 200ms
+            const duration = 200;
             const end = Date.now() + duration;
             const colors = ['#5865f2', '#57f287', '#fee75c', '#eb459e', '#ed4245'];
             (function frame() {
@@ -32,4 +32,7 @@ function launchConfetti() {
         function showLoginMessage(event) {
             event.preventDefault();
             alert('왜 눌러보시나요?');
+        }
+        function goBack() {
+                    window.history.back();
         }
