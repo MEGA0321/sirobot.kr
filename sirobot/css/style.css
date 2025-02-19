@@ -60,7 +60,6 @@ tit {
     margin-left: -250px;
 }
 
-/* 태블릿 (화면 너비 768px 이하) */
 @media (max-width: 768px) {
     h4, titl, tit {
         margin-left: 0;
@@ -610,9 +609,10 @@ main#questions {
     padding: 20px;
     padding-top: 0px;
     padding-bottom: 0px;
-    background: var(--bg-color);
+    background: var(--bg-color); 
     margin: 5px 0px;
     border-radius: 10px;
+    position: relative;
 }
 
 .topic h2.question {
@@ -652,7 +652,10 @@ main#questions {
     display: none;
     margin-bottom: 30px;
     text-align: justify;
-    padding-bottom: 20px !important;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .faq-t {
