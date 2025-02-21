@@ -647,15 +647,10 @@ main#questions {
 }
 
 .answer {
-    font-size: 18px;
-    line-height: 16px;
     display: none;
     margin-bottom: 30px;
     text-align: justify;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px !important;
 }
 
 .faq-t {
